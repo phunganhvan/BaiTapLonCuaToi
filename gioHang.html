@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/baiTapLonThietKeWeb/bootstrap/Animate/animate.css">
+    <!-- Animate Style -->
+
+    <link rel="stylesheet" href="/baiTapLonThietKeWeb/assets/reset.css">
+    <link rel="stylesheet" href="/baiTapLonThietKeWeb/bootstrap/bootstrapCss.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" href="/baiTapLonThietKeWeb/assets/base.css">
+    <link rel="stylesheet" href="/baiTapLonThietKeWeb/assets/style.css">
+</head>
+
+<body>
+    <style>
+        .sanPhamTest {
+            position: relative;
+            top: 100px;
+            display: flex;
+        }
+
+        .tab {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            border: none;
+            background-color: #FFEFD1;
+            width: 200px;
+            height: 100px;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            display: block;
+            background-color: inherit;
+            color: black;
+            padding: 16px 10px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #fccc74;
+            font-weight: bold;
+        }
+
+        /* Create an active/current "tab button" class */
+        .tab button.active {
+            background-color: #f6c05c;
+            color: var(--color-text);
+            font-weight: bold;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            top: -90px;
+            left: 100px;
+            position: relative;
+            margin-left: 10px;
+            width: 900px;
+            border-left: none;
+            height: 300px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .floating-sidebar {
+            position: fixed;
+            /* Cố định vị trí */
+            top: 50%;
+            /* Đặt giữa chiều cao màn hình */
+            right: 10px;
+            /* Cách lề phải 10px */
+            transform: translateY(-50%);
+            /* Đặt thanh ở giữa màn hình */
+            display: flex;
+            flex-direction: column;
+            /* Sắp xếp các nút theo chiều dọc */
+            gap: 10px;
+            /* Khoảng cách giữa các nút */
+            z-index: 1000;
+            /* Đảm bảo thanh luôn nổi trên các thành phần khác */
+        }
+
+        .floating-sidebar a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            /* Làm tròn các nút */
+            background-color: #f3f3f3;
+            /* Màu nền của nút */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Hiệu ứng đổ bóng */
+            text-decoration: none;
+            color: #000;
+            font-size: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .floating-sidebar a:hover {
+            background-color: #ddd;
+            /* Thay đổi màu khi hover */
+            transform: scale(1.1);
+            /* Phóng to nút khi hover */
+        }
+    </style>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .Menu {
+            background: #f4dfb8;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            display: none;
+            /* ẩn đi  */
+        }
+
+        .button.hide {
+            display: none;
+        }
+
+        .Menu.show {
+            display: block;
+        }
+
+        .Menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 30px;
+        }
+
+        .Menu ul li {
+            padding: 10px;
+            border-bottom: 1px solid #00002d;
+        }
+
+        .Menu .inner-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        /* .button{
+            position: absolute;
+            top:20px;
+            right:100px;
+        } */
+        .search-input {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-button {
+            position: absolute;
+            top: 8px;
+            left: 290px;
+            padding: 0;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+    </style>
+    <!-- Header -->
+    <header id="top" class="Header">
+        <div class="inner-header">
+            <div class="header-top">
+                <div class="inner-wrap">
+                    <div class="cnLogo">
+                        <div class="header-logo"><img src="/baiTapLonThietKeWeb/assets/image/logo.jpg" alt="logo">
+                        </div>
+                    </div>
+                    <div class="cxLogo">
+                        <div class="header-search">
+                            <div class="inner-header">
+                                <div class="BackGR">
+                                    <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..."
+                                        class="input-search">
+                                </div>
+                                <div class="header-bg"></div>
+                                <button id="searchButton" class="search-button"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                        </div>
+                        <div class="header-icons">
+                            <div class="header-acount">
+                                <div class="bg-icons">
+                                    <a href="/" target="_blank"><i class="fa-solid fa-user"></i></a>
+                                </div>
+                                <div class="para acount">Tài khoản</div>
+                            </div>
+                            <div class="shoping-cart">
+                                <div class="bg-icons">
+                                    <a href="/" target="_blank"><i class="fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                                <div class="para shoping">Giỏ hàng</div>
+                            </div>
+                            <div class="header-contact">
+                                <div class="bg-icons">
+                                    <a href="/" target="_blank"><i class="fa-solid fa-phone"></i></a>
+                                </div>
+                                <div class="para contact">0966490431</div>
+                            </div>
+                        </div>
+                        <div class="header-list">
+                            <button class="button" id="buttonMenu"><i class="fa-solid fa-list"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <ul class="breadcrumb">
+                        <li><a href="/baiTapLonThietKeWeb/index.html">Trang chủ</a></li>
+                        <li>Giỏ hàng</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Menu" id="Menu">
+                <button class="inner-close" id="buttonClose">Đóng</button>
+                <ul>
+                    <a href="#"><li>Trang chủ</li></a>
+                    <a href="#"><li>Giới thiệu</li></a>
+                    <a href="#"><li>Voucher</li></a>
+                    <a href="#"><li>Danh sách cửa hàng</li></a>
+                    <a href="#"><li>Tuyển dụng</li></a>
+                </ul>
+            </div>
+    </header>
+
+    <div class="floating-sidebar">
+        <!-- Nút Zalo -->
+        <a href="#" title="Twitter">
+            <img src="https://cdn-icons-png.flaticon.com/512/3256/3256013.png" alt="Zalo"
+                style="width: 30px; height: 30px;">
+        </a>
+        <!-- Nút Messenger -->
+        <a href="#" title="Messenger">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111342.png" alt="Messenger"
+                style="width: 30px; height: 30px;">
+        </a>
+        <!-- Nút Instagram -->
+        <a href="#" title="Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
+                style="width: 30px; height: 30px;">
+        </a>
+        <!-- Nút Lên Đầu Trang -->
+        <a href="#top" title="Lên Đầu Trang">
+            <img src="https://cdn-icons-png.flaticon.com/512/892/892692.png" alt="Lên đầu trang"
+                style="width: 30px; height: 30px;">
+        </a>
+    </div>
+    <!--End - Header -->
+
+
+
+    <!-- Footer -->
+    <footer class="Footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="inner-left">
+                        <img src="/baiTapLonThietKeWeb/assets/image/logo.jpg" alt="">
+                        <h3 class="inner-infom">CÔNG TY CỔ PHẦN BÁNH NGỌT TIỆM BÁNH NHỎ</h3>
+                        <p class="inner-check">
+                            Mã số doanh nghiệp: 0103588868 Do Sở Kế hoạch - Đầu tư Hà Nội cấp ngày
+                            25/08/2009
+                        </p>
+                        <!-- <img class="img-check" src="/baiTapLonThietKeWeb/assets/image/đã check.jpg" alt="CHECK"> -->
+                        <img class="img-check"
+                            src="https://theme.hstatic.net/1000313040/1000406925/14/hg_img_thumb1.png?v=2177"
+                            alt="CHECK">
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="inner-center">
+                        <h3 class="inner-cs">Chính sách</h3>
+                        <ul class="list-cs">
+                            <li><a href="#">Chính sách giao dịch, thanh toán</a></li>
+                            <li><a href="#">Chính sách đổi trả</a></li>
+                            <li><a href="#">Chính sách vận chuyển</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="inner-right">
+                        <h3 class="inner-inf">Liên hệ</h3>
+                        <div class="inner-foot">
+                            <div class="inner-contact">
+                                <i class="fa-solid fa-phone"></i>
+                                <p>0905 306 831</p>
+                            </div>
+                            <div class="inner-location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>19 Trần Phú, Hà Đông, Hà Nội</p>
+                            </div>
+                            <div class="inner-mas">
+                                <i class="fa-regular fa-envelope"></i>
+                                <p>cskh@tiembanhnho.vn</p>
+                            </div>
+                            <div class="HR">
+                                <hr>
+                            </div>
+                            <div class="inner-icons">
+                                <!-- <img src="/baiTapLonThietKeWeb/assets/image/tiktok.png" alt="Tiktok">
+                                <img src="/baiTapLonThietKeWeb/assets/image/facebook.png" alt="Facebook">
+                                <img src="/baiTapLonThietKeWeb/assets/image/youtube.png" alt="Youtube"> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End- Footer -->
+    <!-- cuoiTrangWeb -->
+    <script src="/baiTapLonThietKeWeb/bootstrap/wow.min.js"></script>
+    <script>
+        const buttonMenu = document.querySelector("#buttonMenu");
+        const buttonClose = document.querySelector("#buttonClose");
+        const menu = document.querySelector("#Menu");
+        const button = document.querySelector("#buttonMenu");
+        buttonMenu.onclick = function () {
+            button.classList.add("hide");
+            menu.classList.add("show");
+        }
+        buttonClose.onclick = function () {
+            menu.classList.remove("show");
+            button.classList.remove("hide");
+        }
+        new WOW().init();
+    </script>
+    <script src="/baiTapLonThietKeWeb/bootstrap/jquery.slim.min.js"></script>
+    <script src="/baiTapLonThietKeWeb/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

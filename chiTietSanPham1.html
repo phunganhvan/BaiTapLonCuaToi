@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lốc xoáy dâu bùng nổ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/baiTapLonThietKeWeb/bootstrap/Animate/animate.css">
+    <!-- Animate Style -->
+
+    <link rel="stylesheet" href="/baiTapLonThietKeWeb/assets/reset.css">
+    <link rel="stylesheet" href="/baiTapLonThietKeWeb/bootstrap/bootstrapCss.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .mySlides {
+            display: none;
+        }
+
+        .mySlidese {
+            display: none;
+        }
+
+        .w3-left,
+        .w3-right,
+        .w3-badge {
+            cursor: pointer
+        }
+
+        .w3-badge {
+            height: 13px;
+            width: 13px;
+            padding: 0
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .floating-sidebar {
+            position: fixed;
+            /* Cố định vị trí */
+            top: 50%;
+            /* Đặt giữa chiều cao màn hình */
+            right: 10px;
+            /* Cách lề phải 10px */
+            transform: translateY(-50%);
+            /* Đặt thanh ở giữa màn hình */
+            display: flex;
+            flex-direction: column;
+            /* Sắp xếp các nút theo chiều dọc */
+            gap: 10px;
+            /* Khoảng cách giữa các nút */
+            z-index: 1000;
+            /* Đảm bảo thanh luôn nổi trên các thành phần khác */
+        }
+
+        .floating-sidebar a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            /* Làm tròn các nút */
+            background-color: #f3f3f3;
+            /* Màu nền của nút */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Hiệu ứng đổ bóng */
+            text-decoration: none;
+            color: #000;
+            font-size: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .floating-sidebar a:hover {
+            background-color: #ddd;
+            /* Thay đổi màu khi hover */
+            transform: scale(1.1);
+            /* Phóng to nút khi hover */
+        }
+    </style>
+    <link rel="stylesheet" href="/baiTapLonThietKeWeb/assets/base.css">
+    <link rel="stylesheet" href="/baiTapLonThietKeWeb/assets/style.css">
+</head>
+
+<body>
+    <style>
+        .infomation-detail {
+            font-family: Arial, sans-serif;
+        }
+
+        .infomation-detail button {
+            width: 30px;
+            height: 30px;
+            color: var(--color-text);
+            margin-right: 0;
+        }
+
+        /* Header thông tin sản phẩm */
+        .info-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        /* Tiêu đề */
+        .info-detail h3 {
+            margin-right: 142px;
+            font-size: 18px;
+            font-weight: bold;
+            width: 300px;
+            color: var(--color-text);
+        }
+
+        /* Nút toggle */
+        .toggle-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            outline: none;
+            transition: transform 0.3s ease;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Mũi tên */
+        .toggle-btn .arrow {
+            font-size: 16px;
+        }
+
+        /* Nội dung thông tin */
+        .info-content {
+            margin-top: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Ẩn nội dung khi đóng */
+        .info-content.hidden {
+            display: none;
+        }
+    </style>
+    <!-- Header -->
+    <header id="top" class="Header">
+        <div class="inner-header">
+            <div class="header-top">
+                <div class="inner-wrap">
+                    <div class="cnLogo">
+                        <div class="header-logo"><img src="/baiTapLonThietKeWeb/assets/image/logo.jpg" alt="logo">
+                        </div>
+                    </div>
+                    <div class="cxLogo">
+                        <div class="header-search">
+                            <div class="inner-header">
+                                <div class="BackGR">
+                                    <input type="text" class="input-search">
+                                </div>
+                                <div class="header-bg"></div>
+                                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                            </div>
+                        </div>
+                        <div class="header-icons">
+                            <div class="header-acount">
+                                <div class="bg-icons">
+                                    <a href="/" target="_blank"><i class="fa-solid fa-user"></i></a>
+                                </div>
+                                <div class="para acount">Tài khoản</div>
+                            </div>
+                            <div class="shoping-cart">
+                                <div class="bg-icons">
+                                    <a href="/" target="_blank"><i class="fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                                <div class="para shoping">Giỏ hàng</div>
+                            </div>
+                            <div class="header-contact">
+                                <div class="bg-icons">
+                                    <a href="/" target="_blank"><i class="fa-solid fa-phone"></i></a>
+                                </div>
+                                <div class="para contact">0966490431</div>
+                            </div>
+                        </div>
+                        <div class="header-list">
+                            <button><i class="fa-solid fa-list"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="margin-top: 0px; margin-bottom: 40px;">
+            <div class="row">
+                <ul class="breadcrumb">
+                    <li><a href="/baiTapLonThietKeWeb/index.html">Trang chủ</a></li>
+                    <li><a href="/baiTapLonThietKeWeb/sanPham.html">Sản phẩm</a></li>
+                    <li>Lốc xoáy dâu bùng nổ</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="floating-sidebar">
+        <!-- Nút Zalo -->
+        <a href="#" title="Twitter">
+            <img src="https://cdn-icons-png.flaticon.com/512/3256/3256013.png" alt="Zalo"
+                style="width: 30px; height: 30px;">
+        </a>
+        <!-- Nút Messenger -->
+        <a href="#" title="Messenger">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111342.png" alt="Messenger"
+                style="width: 30px; height: 30px;">
+        </a>
+        <!-- Nút Instagram -->
+        <a href="#" title="Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
+                style="width: 30px; height: 30px;">
+        </a>
+        <!-- Nút Lên Đầu Trang -->
+        <a href="#top" title="Lên Đầu Trang">
+            <img src="https://cdn-icons-png.flaticon.com/512/892/892692.png" alt="Lên đầu trang"
+                style="width: 30px; height: 30px;">
+        </a>
+    </div>
+    <!--End - Header -->
+    <!--End - Header -->
+
+    <!-- chiTietSanPham -->
+    <div class="chiTietSanPham">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3"></div>
+
+                <div class="col-xl-9">
+                    <div class="product-img">
+                        <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/locXoayDauBungNo.jpg" alt="">
+                    </div>
+                    <div class="product-infomation">
+                        <h3 class="product-titles">
+                            Bánh ngọt
+                        </h3>
+                        <h4 class="product-names">Lốc xoáy dâu bùng nổ</h4>
+                        <div class="product-costs">Giá tiền: <b style="color: #b66954; font-size: 18px;">50.000đ</b>
+                        </div>
+                        <div class="product-numbers">Số lượng:
+                            <input class="numberPs" type="number" placeholder="1" required>
+                        </div>
+                        <div class="product-button">
+                            <button id="AddM">Thêm vào giỏ hàng</button>
+                            <button id="BuyM">Mua ngay</button>
+                        </div>
+                        <div class="infomation-detail">
+                            <div class="info-detail">
+                                <h3>Thông tin sản phẩm</h3>
+                                <button class="toggle-btn">
+                                    <span class="arrow">&#9650;</span> <!-- Mũi tên lên -->
+                                </button>
+                            </div>
+                            <div class="info-content">
+                                <p>Bánh cherry dâu mềm mịn, kem lạnh, ngọt thanh vị trái dâu chín cùng lớp bánh bên
+                                    trong phô mai béo ngậy,
+                                    ẩm ướt. Phủ tráng
+                                    lớp sốt dâu dẻo thơm.</p>
+                                <p><b>Vị bánh:</b> Cherry dâu tươi mát, ngọt dịu, cùng vỏ bánh phô mai thơm béo vị sữa.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End-chiTietSanPham -->
+
+
+
+    <!-- sanPhamCungLoai -->
+    <div class="sanPhamCungLoai">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <h2 class="title">Sản phẩm cùng loại</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/niemHanhPhucDauNgot.jpg"
+                                alt="Niềm hạnh phúc dâu ngọt">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Niềm hạnh phúc dâu ngọt
+                                </h4>
+                                <p class="product-value">
+                                    40.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3">
+                    <a href="/baiTapLonThietKeWeb/chiTietSanPham2.html">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/cauVongHanhPhuc.jpg"
+                                alt="Cầu vồng hạnh phúc">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Cầu vồng hạnh phúc
+                                </h4>
+                                <p class="product-value">
+                                    35.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/banhMeoHanhNhan.jpg"
+                                alt="Bánh mèo hạnh nhân">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Bánh mèo hạnh nhân
+                                </h4>
+                                <p class="product-value">
+                                    8.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/banhGauXinhXan.jpg"
+                                alt="Cầu vồng hạnh phúc">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Bánh gấu xinh xắn
+                                </h4>
+                                <p class="product-value">
+                                    10.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-3">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/sanPhamNoiBat/banhDuaBeoNgay.png"
+                                alt="Bánh dứa béo ngậy">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Bánh dứa béo ngậy
+                                </h4>
+                                <p class="product-value">
+                                    125.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/MacaronNgotNgao.jpg"
+                                alt="Macaron ngọt ngào">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Macaron ngọt ngào
+                                </h4>
+                                <p class="product-value">
+                                    20.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/sanPhamNoiBat/gionTanCaramelDau.png"
+                                alt="Cầu vồng hạnh phúc">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Giòn tan Caramel dâu
+                                </h4>
+                                <p class="product-value">
+                                    150.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-3">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/banhHoaSocola.jpg"
+                                alt="Bánh hoa Socola">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Bánh hoa Socola
+                                </h4>
+                                <p class="product-value">
+                                    23.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--End- sanPhamCungLoai -->
+
+
+
+
+    <!-- Near_Footer -->
+    <div class="near_footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-12">
+                    <img src="/baiTapLonThietKeWeb/assets/image/bg_footer.png" alt="Gần footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- End_Near-footer -->
+
+    <!-- Footer -->
+    <footer class="Footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="inner-left">
+                        <img src="/baiTapLonThietKeWeb/assets/image/logo.jpg" alt="">
+                        <h3 class="inner-infom">CÔNG TY CỔ PHẦN BÁNH NGỌT TIỆM BÁNH NHỎ</h3>
+                        <p class="inner-check">
+                            Mã số doanh nghiệp: 0103588868 Do Sở Kế hoạch - Đầu tư Hà Nội cấp ngày 25/08/2009
+                        </p>
+                        <!-- <img class="img-check" src="/baiTapLonThietKeWeb/assets/image/đã check.jpg" alt="CHECK"> -->
+                        <img class="img-check"
+                            src="https://theme.hstatic.net/1000313040/1000406925/14/hg_img_thumb1.png?v=2177"
+                            alt="CHECK">
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="inner-center">
+                        <h3 class="inner-cs">Chính sách</h3>
+                        <ul class="list-cs">
+                            <li><a href="#">Chính sách giao dịch, thanh toán</a></li>
+                            <li><a href="#">Chính sách đổi trả</a></li>
+                            <li><a href="#">Chính sách vận chuyển</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="inner-right">
+                        <h3 class="inner-inf">Liên hệ</h3>
+                        <div class="inner-foot">
+                            <div class="inner-contact">
+                                <i class="fa-solid fa-phone"></i>
+                                <p>0905 306 831</p>
+                            </div>
+                            <div class="inner-location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>19 Trần Phú, Hà Đông, Hà Nội</p>
+                            </div>
+                            <div class="inner-mas">
+                                <i class="fa-regular fa-envelope"></i>
+                                <p>cskh@tiembanhnho.vn</p>
+                            </div>
+                            <div class="HR">
+                                <hr>
+                            </div>
+                            <div class="inner-icons">
+                                <!-- <img src="/baiTapLonThietKeWeb/assets/image/tiktok.png" alt="Tiktok">
+                                <img src="/baiTapLonThietKeWeb/assets/image/facebook.png" alt="Facebook">
+                                <img src="/baiTapLonThietKeWeb/assets/image/youtube.png" alt="Youtube"> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End- Footer -->
+    <!-- cuoiTrangWeb -->
+    <script src="/baiTapLonThietKeWeb/bootstrap/wow.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleBtn = document.querySelector(".toggle-btn");
+            const infoContent = document.querySelector(".info-content");
+            const arrow = document.querySelector(".arrow");
+
+            // Xử lý sự kiện khi click nút
+            toggleBtn.addEventListener("click", function () {
+                // Thêm/xóa class 'hidden' để ẩn/hiện nội dung
+                infoContent.classList.toggle("hidden");
+
+                // Đổi hướng mũi tên
+                if (infoContent.classList.contains("hidden")) {
+                    arrow.innerHTML = "&#9660;"; // Mũi tên xuống
+                } else {
+                    arrow.innerHTML = "&#9650;"; // Mũi tên lên
+                }
+            });
+        });
+        new WOW().init();
+    </script>
+
+    <script src="/baiTapLonThietKeWeb/bootstrap/jquery.slim.min.js"></script>
+    <script src="/baiTapLonThietKeWeb/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

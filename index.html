@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/baiTapLonThietKeWeb/bootstrap/Animate/animate.css">
+    <!-- Animate Style -->
+
+    <link rel="stylesheet" href="/baiTapLonThietKeWeb/assets/reset.css">
+    <link rel="stylesheet" href="/baiTapLonThietKeWeb/bootstrap/bootstrapCss.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .mySlides {
+            display: none;
+        }
+
+        .mySlidese {
+            display: none;
+        }
+
+        .w3-left,
+        .w3-right,
+        .w3-badge {
+            cursor: pointer
+        }
+
+        .w3-badge {
+            height: 13px;
+            width: 13px;
+            padding: 0
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .floating-sidebar {
+            position: fixed;
+            /* Cố định vị trí */
+            top: 50%;
+            /* Đặt giữa chiều cao màn hình */
+            right: 10px;
+            /* Cách lề phải 10px */
+            transform: translateY(-50%);
+            /* Đặt thanh ở giữa màn hình */
+            display: flex;
+            flex-direction: column;
+            /* Sắp xếp các nút theo chiều dọc */
+            gap: 10px;
+            /* Khoảng cách giữa các nút */
+            z-index: 1000;
+            /* Đảm bảo thanh luôn nổi trên các thành phần khác */
+        }
+
+        .floating-sidebar a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            /* Làm tròn các nút */
+            background-color: #f3f3f3;
+            /* Màu nền của nút */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Hiệu ứng đổ bóng */
+            text-decoration: none;
+            color: #000;
+            font-size: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .floating-sidebar a:hover {
+            background-color: #ddd;
+            /* Thay đổi màu khi hover */
+            transform: scale(1.1);
+            /* Phóng to nút khi hover */
+        }
+    </style>
+    <link rel="stylesheet" href="/baiTapLonThietKeWeb/assets/base.css">
+    <link rel="stylesheet" href="/baiTapLonThietKeWeb/assets/style.css">
+</head>
+
+<body>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .Menu {
+            background: #f4dfb8;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            display: none;
+            /* ẩn đi  */
+        }
+
+        .button.hide {
+            display: none;
+        }
+
+        .Menu.show {
+            display: block;
+        }
+
+        .Menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 30px;
+        }
+
+        .Menu ul li {
+            padding: 16px;
+            border-bottom: 1px solid #d6910f;
+        }
+
+        .Menu .inner-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        /* .button{
+            position: absolute;
+            top:20px;
+            right:100px;
+        } */
+        .search-input {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-button {
+            position: absolute;
+            top: 8px;
+            left: 290px;
+            padding: 0;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .nearNearFooter {
+            position: relative;
+        }
+
+        .forUs {
+            position: relative;
+        }
+
+        .forUs img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .BackGround {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            background-color: black;
+            opacity: 0.4;
+            width: 1240px;
+            height: 368px;
+        }
+
+        .Text {
+            position: absolute;
+            left: 192px;
+            top: 50px;
+            color: white;
+            width: 800px;
+            height: 300px;
+            padding: 50px
+        }
+
+        .Text h2 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .Text p {
+            font-size: 20px;
+        }
+    </style>
+    <!-- Header -->
+    <header id="top" class="Header">
+        <div class="inner-header">
+            <div class="header-top">
+                <div class="inner-wrap">
+                    <div class="cnLogo">
+                        <div class="header-logo"><img src="/baiTapLonThietKeWeb/assets/image/logo.jpg" alt="logo">
+                        </div>
+                    </div>
+                    <div class="cxLogo">
+                        <div class="header-search">
+                            <div class="inner-header">
+                                <div class="BackGR">
+                                    <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..."
+                                        class="input-search">
+                                </div>
+                                <div class="header-bg"></div>
+                                <button id="searchButton" class="search-button"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                        </div>
+                        <div class="header-icons">
+                            <div class="header-acount">
+                                <div class="bg-icons">
+                                    <a href="/" target="_blank"><i class="fa-solid fa-user"></i></a>
+                                </div>
+                                <div class="para acount">Tài khoản</div>
+                            </div>
+                            <div class="shoping-cart">
+                                <div class="bg-icons">
+                                    <a href="/" target="_blank"><i class="fa-solid fa-cart-shopping"></i></a>
+                                </div>
+                                <div class="para shoping">Giỏ hàng</div>
+                            </div>
+                            <div class="header-contact">
+                                <div class="bg-icons">
+                                    <a href="/" target="_blank"><i class="fa-solid fa-phone"></i></a>
+                                </div>
+                                <div class="para contact">0966490431</div>
+                            </div>
+                        </div>
+                        <div class="header-list">
+                            <button class="button" id="buttonMenu"><i class="fa-solid fa-list"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-main">
+                <div class="inner-menu">
+                    <ul>
+                        <li><a href="/baiTapLonThietKeWeb/index.html">Trang chủ</a></li>
+                        <li><a href="/baiTapLonThietKeWeb/sanPham.html">Sản phẩm</a></li>
+                        <li><a href="#">Thông tin</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">Ưu đãi</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="Menu" id="Menu">
+            <button class="inner-close" id="buttonClose"><i class="fa-solid fa-arrow-right"></i></button>
+            <ul>
+                <li style="color: var(--color-text);font-weight: bold;"><a href="#">Trang chủ</a></li>
+                <li style="color: var(--color-text);font-weight: bold;"><a href="#">Giới thiệu</a></li>
+                <li style="color: var(--color-text);font-weight: bold;"><a href="#">Voucher</a></li>
+                <li style="color: var(--color-text);font-weight: bold;"><a href="#">Danh sách cửa hàng</a></li>
+                <li style="color: var(--color-text);font-weight: bold;"><a href="#">Tuyển dụng</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+    <div class="floating-sidebar">
+        <!-- Nút Zalo -->
+        <a href="#" title="Twitter">
+            <img src="https://cdn-icons-png.flaticon.com/512/3256/3256013.png" alt="Zalo"
+                style="width: 30px; height: 30px;">
+        </a>
+        <!-- Nút Messenger -->
+        <a href="https://web.facebook.com/" title="Messenger">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111342.png" alt="Messenger"
+                style="width: 30px; height: 30px;">
+        </a>
+        <!-- Nút Instagram -->
+        <a href="#" title="Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
+                style="width: 30px; height: 30px;">
+        </a>
+        <!-- Nút Lên Đầu Trang -->
+        <a href="#top" title="Lên Đầu Trang">
+            <img src="https://cdn-icons-png.flaticon.com/512/892/892692.png" alt="Lên đầu trang"
+                style="width: 30px; height: 30px;">
+        </a>
+    </div>
+
+    <div class="main">
+        <div class="out-header">
+            <div class="container">
+                <h1 class="inner-title">Tiệm bánh nhỏ</h1>
+                <h2 class="inner-title2">Sweet cake</h2>
+                <p class="inner-desc">Bánh ngọt không chỉ đơn thuần là thức ăn, mà còn mang nhiều ý nghĩa tinh thần. Một
+                    chiếc bánh kem sinh nhật sẽ làm cho ngày sinh nhật thêm phần ý nghĩa, một chiếc bánh nhỏ xinh sẽ là
+                    món quà ngọt ngào để bày tỏ tình cảm. Bánh ngọt còn là biểu tượng của sự ngọt ngào, hạnh phúc và may
+                    mắn.</p>
+            </div>
+        </div>
+        <!--End - Header -->
+
+        <!-- new Product -->
+        <div class="newProduct">
+            <div class="inner-sotitle">
+                <h2 class="title">Sản phẩm mới</h2>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 ">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="banhngot-tab" data-toggle="tab"
+                                    data-target="#banhngot" type="button" role="tab" aria-controls="banhngot"
+                                    aria-selected="true">Bánh
+                                    ngọt</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="banhkem-tab" data-toggle="tab" data-target="#banhkem"
+                                    type="button" role="tab" aria-controls="banhkem" aria-selected="false">Bánh
+                                    kem</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="banhman-tab" data-toggle="tab" data-target="#banhman"
+                                    type="button" role="tab" aria-controls="banhman" aria-selected="false">Bánh
+                                    mặn</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="banhtrungthu-tab" data-toggle="tab"
+                                    data-target="#banhtrungthu" type="button" role="tab" aria-controls="banhtrungthu"
+                                    aria-selected="false">Bánh trung
+                                    thu</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <!-- banhngot -->
+                            <div class="tab-pane fade show active " id="banhngot" role="tabpanel"
+                                aria-labelledby="banhngot-tab">
+                                <div class="row">
+                                    <div class="col-xl-4" data-name="Bánh ngọt cầu vồng hạnh phúc">
+                                        <a href="/baiTapLonThietKeWeb/chiTietSanPham2.html">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/cauVongHanhPhuc.jpg"
+                                                    alt="Cầu vồng hạnh phúc">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Cầu vồng hạnh phúc
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        35.000đ/1c
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4" data-name="Bánh ngọt lốc xoáy dâu bùng nổ">
+                                        <a href="/baiTapLonThietKeWeb/chiTietSanPham1.html">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/locXoayDauBungNo.jpg"
+                                                    alt="Lốc xoáy dâu bùng nổ">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Lốc xoáy dâu bùng nổ
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        50.000đ/1c
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4" data-name="Bánh ngọt Macaron ngọt ngào">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/MacaronNgotNgao.jpg"
+                                                    alt="Macaron ngọt ngào">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Macaron ngọt ngào
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        20.000đ/1c
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- banhKem -->
+                            <div class="tab-pane fade" id="banhkem" role="tabpanel" aria-labelledby="banhkem-tab">
+                                <div class="row">
+                                    <div class="col-xl-4" data-name="Bánh kem Caramel Rose">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh kem/BanhkemCaramelRose.jpg"
+                                                    alt="Bánh kem Caramel Rose">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Bánh kem Caramel Rose
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        400.000đ
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4" data-name="Bánh kem Almond Vanilla">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh kem/BanhkemAlmondVanilla.jpg"
+                                                    alt="Bánh kem Almond Vanilla">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Bánh kem Almond Vanilla
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        600.000đ
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4" data-name="Bánh kem Strawberry Delight">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh kem/BanhkemStrawberryDelight.jpg"
+                                                    alt="Bánh kem Strawberry Delight">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Bánh kem Strawberry Delight
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        220.000đ
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- banhman -->
+                            <div class="tab-pane fade" id="banhman" role="tabpanel" aria-labelledby="banhman-tab">
+                                <div class="row">
+                                    <div class="col-xl-4" data-name="Bánh mặn Pateso Ngàn Lớp">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh mặn/PatesoNganLop.jpg"
+                                                    alt="Bánh mặn Pateso Ngàn Lớp">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Pateso Ngàn Lớp
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        45.000đ/1c
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4" data-name="Bánh mặn Chà bông tơi xốp">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh mặn/ChaBongToiXop.jpg"
+                                                    alt="Bánh Chà bông tơi xốp">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Chà bông tơi xốp
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        18.000đ/1c
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4" data-name="Bánh mặn xúc xích ngủ đông">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh mặn/XucXichNguDong.jpg"
+                                                    alt="Bánh xúc xích ngủ đông">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Xúc xích ngủ đông
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        15.000đ/1c
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- banhTrungthu  -->
+                            <div class="tab-pane fade" id="banhtrungthu" role="tabpanel"
+                                aria-labelledby="banhtrungthu-tab">
+                                <div class="row">
+                                    <div class="col-xl-4" data-name="Bánh nướng trung thu gà quay Jambo">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh nướng trung thu/GaQuayJambo.jpg"
+                                                    alt="Gà quay Jambo">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Gà quay Jambo
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        100.000đ/1c
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4" data-name="Bánh trung thu dẻo thập cẩm">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh nướng trung thu/ThapCamMely.jpg"
+                                                    alt="Thập cẩm mê ly">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Thập cẩm mê ly
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        80.000đ/1c
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4" data-name="Bánh nướng trung thu Matcha Nhật Bản">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh nướng trung thu/banhNuongMatchaNhatBan.jpg"
+                                                    alt="Bánh nướng Matcha Nhật Bản">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Bánh nướng Matcha Nhật Bản
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        70.000đ/1c
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End - newProduct -->
+
+
+        <!-- sanPhamNoiBat -->
+        <div class="sanPhamNoiBat">
+            <div class="inner-sotitle">
+                <h2 class="title_sp">Sản phẩm nổi bật</h2>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="banhngot-tab" data-toggle="tab"
+                                    data-target="#banhngot1" type="button" role="tab" aria-controls="banhngot_1"
+                                    aria-selected="true">Bánh
+                                    ngọt</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="banhkem-tab" data-toggle="tab" data-target="#banhkem1"
+                                    type="button" role="tab" aria-controls="banhkem_1" aria-selected="false">Bánh
+                                    kem</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="banhman-tab" data-toggle="tab" data-target="#banhman1"
+                                    type="button" role="tab" aria-controls="banhman_1" aria-selected="false">Bánh
+                                    mặn</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="banhtrungthu-tab" data-toggle="tab"
+                                    data-target="#banhtrungthu1" type="button" role="tab" aria-controls="banhtrungthu_1"
+                                    aria-selected="false">Bánh trung
+                                    thu</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <!-- banhngot -->
+                            <div class="tab-pane fade show active" id="banhngot1" role="tabpanel"
+                                aria-labelledby="banhngot_1-tab">
+                                <div class="row">
+                                    <div class="col-xl-4" data-name="Bánh ngọt Dứa béo ngậy">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/sanPhamNoiBat/banhDuaBeoNgay.png"
+                                                    alt="Bánh Dứa béo ngậy">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Bánh Dứa béo ngậy
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        125.000đ
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4" data-name="Bánh ngọt niềm hạnh phúc dâu ngọt">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/sanPhamNoiBat/niemHanhPhucDauNgot.jpg"
+                                                    alt="Niềm hạnh phúc dâu ngọt">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Niềm hạnh phúc dâu ngọt
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        40.000đ
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4" data-name="Bánh ngọt giòn tan Caramel dâu">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/sanPhamNoiBat/gionTanCaramelDau.png"
+                                                    alt="Giòn tan Caramel Dâu">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Giòn tan Caramel Dâu
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        150.000đ
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- banhKem -->
+                            <div class="tab-pane fade" id="banhkem1" role="tabpanel" aria-labelledby="banhkem_1-tab">
+                                <div class="row">
+                                    <div class="col-xl-4" data-name="Bánh kem Pricess">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh kem/banhKemCongChua.jpg"
+                                                    alt="Bánh kem Pricess">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Bánh kem Pricess
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        180.000đ/1c
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4" data-name="Bánh kem cúc họa mi">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh kem/sanPhamNoiBat/banhKemCucHoaMi.jpg"
+                                                    alt="Bánh Kem Cúc Họa Mi">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Bánh Kem Cúc Họa Mi
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        320.000đ
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4" data-name="Bánh kem dâu tây bóng đêm">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh kem/sanPhamNoiBat/dauTayBongDem.jpg"
+                                                    alt="Dâu tây bóng đêm">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Dâu tây bóng đêm
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        280.000đ
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- banhman -->
+                            <div class="tab-pane fade" id="banhman1" role="tabpanel" aria-labelledby="banhman_1-tab">
+                                <div class="row">
+                                    <div class="col-xl-4" data-name="Bánh mặn vòng tròn xúc xích">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh mặn/VongTronXucXich.jpg"
+                                                    alt="Bánh vòng xúc xích">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Bánh vòng xúc xích
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        23.000đ/1c
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4" data-name="Bánh mặn cá mê ly">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh mặn/banhCaMeLy.jpg"
+                                                    alt="Bánh cá mê ly">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Bánh cá mê ly
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        27.000đ/1c
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4" data-name="Bánh mặn Pía đặc sản">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh mặn/BanhPiaTrungDao.jpg"
+                                                    alt="Bánh Pía đặc sản">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Bánh Pía đặc sản
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        13.000đ/1c
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- banhTrungthu  -->
+                            <div class="tab-pane fade" id="banhtrungthu1" role="tabpanel"
+                                aria-labelledby="banhtrungthu_1-tab">
+                                <div class="row">
+                                    <div class="col-xl-4" data-name="Bánh nướng trung thu đậu xanh">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh nướng trung thu/sanPhamNoiBat/banhNuongDauXanh.jpg"
+                                                    alt="Bánh nướng đậu xanh">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Bánh nướng đậu xanh
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        80.000đ/1c
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4" data-name="Bánh nướng trung thu đậu xanh trứng nướng">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh nướng trung thu/sanPhamNoiBat/dauXanhTrungNuong.jpg"
+                                                    alt="Đậu xanh trứng nướng">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Đậu xanh trứng nướng
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        95.000đ/1c
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-xl-4" data-name="Bánh nướng trung thu thập cẩm">
+                                        <a href="#">
+                                            <div class="product-items">
+                                                <img src="/baiTapLonThietKeWeb/assets/image/bánh nướng trung thu/sanPhamNoiBat/banhNuongThapCam.jpg"
+                                                    alt="Bánh nướng thập cẩm">
+                                                <div class="product-infomation">
+                                                    <h4 class="product-name">
+                                                        Bánh nướng thập cẩm
+                                                    </h4>
+                                                    <p class="product-value">
+                                                        90.000đ/1c
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End- sanPhamNoiBat -->
+
+
+
+        <!-- End-sanPhamNoiBat -->
+
+
+        <!-- khuyenMai -->
+        <div class="khuyenMai">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <h2 class="w3-center">Khuyến mại</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="w3-content w3-section w3-center" style="max-width:500px; margin-left: 56px;">
+                            <img class="mySlidese" src="/baiTapLonThietKeWeb/assets/image/sale_5.jpg"
+                                style="width:1000px; height: 480px; object-fit: cover;">
+                            <img class="mySlidese" src="/baiTapLonThietKeWeb/assets/image/sale_3.jpg"
+                                style="width:1000px; height: 480px; object-fit: cover;">
+                            <img class="mySlidese" src="/baiTapLonThietKeWeb/assets/image/sale_4.jpeg"
+                                style="width:1000px; height: 480px; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- EndKhuyenMai -->
+
+
+
+        <!-- Section-Response -->
+        <div class="section-response">
+            <div class="container">
+                <div class="inner-sotitle">
+                    <h2 class="title">Phản hồi khách hàng</h2>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="inner-box">
+                            <div class="inner-main">
+                                <div class="inner-content">
+                                    Vị ngọt thanh của bánh kết hợp cùng vị chua nhẹ của trái cây tạo nên một trải nghiệm
+                                    ẩm
+                                    thực tuyệt vời.
+                                </div>
+                            </div>
+                            <div class="inner-under">
+                                <div class="inner-author">
+                                    <img src="/baiTapLonThietKeWeb/assets/image/BuiSon.jpg" alt="Mr. Bùi Sơn">
+                                </div>
+                                <div class="inner-info">
+                                    <div class="inner-name">
+                                        Mr. Bùi Sơn
+                                    </div>
+                                    <div class="inner-star">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="inner-box">
+                            <div class="inner-main">
+                                <div class="inner-content">
+                                    Tôi bị chinh phục hoàn toàn bởi hương thơm quyến rũ và vị béo ngậy của những chiếc
+                                    bánh
+                                    ở tiệm.
+                                </div>
+                            </div>
+                            <div class="inner-under">
+                                <div class="inner-author">
+                                    <img src="/baiTapLonThietKeWeb/assets/image/Dinh.jpg" alt="Mr. Đinh">
+                                </div>
+                                <div class="inner-info">
+                                    <div class="inner-name">
+                                        Mr. Đinh
+                                    </div>
+                                    <div class="inner-star">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="inner-box">
+                            <div class="inner-main">
+                                <div class="inner-content">
+                                    Bánh có độ ẩm vừa phải, không quá khô cũng không quá ẩm, rất ngon. Đây chắc chắn là
+                                    tiệm bánh tôi sẽ gắn bó vào những dịp lễ.
+                                </div>
+                            </div>
+                            <div class="inner-under">
+                                <div class="inner-author">
+                                    <img src="/baiTapLonThietKeWeb/assets/image/LanNgoc.jpg" alt="Mrs. Lan Ngọc">
+                                </div>
+                                <div class="inner-info">
+                                    <div class="inner-name">
+                                        Mrs. Lan Ngọc
+                                    </div>
+                                    <div class="inner-star">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--End- Section-Response -->
+
+        <!-- Ưu tiên chất lượng -->
+        <div class="UuTienChatLuong">
+            <div class="container">
+                <div class="inner-sotitle">
+                    <h2 class="title">Ưu tiên chất lượng</h2>
+                </div>
+                <div class="row">
+                    <div class="col-xl-3">
+                        <div class="inner-box">
+                            <img src="/baiTapLonThietKeWeb/assets/image/NguyenLieuSach.jpg" alt="Nguyên liệu sạch">
+                            <div class="inner-desc">
+                                Nguyên liệu sạch
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3">
+                        <div class="inner-box">
+                            <img src="/baiTapLonThietKeWeb/assets/image/DamBaoAnToan.jpg" alt="Đảm bảo an toàn">
+                            <div class="inner-desc">
+                                Đảm bảo an toàn
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3">
+                        <div class="inner-box">
+                            <img src="/baiTapLonThietKeWeb/assets/image/DanhGiaChatLuong.jpg" alt="Đánh giá chất lượng">
+                            <div class="inner-desc">
+                                Đánh giá chất lượng
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3">
+                        <div class="inner-box">
+                            <img src="/baiTapLonThietKeWeb/assets/image/VanChuyenNhanhChong.jpg"
+                                alt="Vận chuyển nhanh chóng">
+                            <div class="inner-desc">
+                                Vận chuyển nhanh chóng
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End  Ưu tiên chất lượng -->
+
+        <!-- sanPhamSlide -->
+
+        <div class="sanPhamSlide">
+            <div class="container">
+                <div class="w3-content w3-display-container" style="max-width:800px">
+                    <img class="mySlides" src="/baiTapLonThietKeWeb/assets/image/slide/banhNgotDauTay.jpg"
+                        style="width:800px; height: 560px; object-fit: cover;">
+                    <img class="mySlides" src="/baiTapLonThietKeWeb/assets/image/slide/mixVi.jpg"
+                        style="width:800px; height: 560px; object-fit: cover;">
+                    <img class="mySlides" src="/baiTapLonThietKeWeb/assets/image/slide/ngotNgao.jpg"
+                        style="width:800px; height: 560px; object-fit: cover;">
+                    <img class="mySlides" src="/baiTapLonThietKeWeb/assets/image/slide/rungBanhNgot.jpg"
+                        style="width:800px; height: 560px; object-fit: cover;">
+                    <img class="mySlides" src="/baiTapLonThietKeWeb/assets/image/slide/teaBreak.jpg"
+                        style="width:800px; height: 560px; object-fit: cover;">
+                    <img class="mySlides" src="/baiTapLonThietKeWeb/assets/image/slide/trangMieng.jpg"
+                        style="width:800px; height: 560px; object-fit: cover;">
+                    <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle"
+                        style="width:100%">
+                        <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+                        <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white"
+                            onclick="currentDiv(1)"></span>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white"
+                            onclick="currentDiv(2)"></span>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white"
+                            onclick="currentDiv(3)"></span>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white"
+                            onclick="currentDiv(4)"></span>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white"
+                            onclick="currentDiv(5)"></span>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white"
+                            onclick="currentDiv(6)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- End_sanPhamSlide -->
+    </div>
+
+    <!-- danhSachSanPhamDeTraCuu -->
+    <div id="productList">
+        <!-- Danh sách các sản phẩm -->
+        <div id="resultReturn" class="ccc" data-name="Bánh kem ngọt trung thu"
+            style="margin-top: 80px; margin-left: 180px; font-size: 32px; color: var(--color-text);">Sản phẩm tìm kiếm
+            cho kết quả </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 product main hidden" data-name="Bánh ngọt cầu vồng hạnh phúc">
+                    <a href="/baiTapLonThietKeWeb/chiTietSanPham2.html">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/cauVongHanhPhuc.jpg"
+                                alt="Cầu vồng hạnh phúc">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Cầu vồng hạnh phúc
+                                </h4>
+                                <p class="product-value">
+                                    35.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 product main hidden" data-name="Bánh ngọt lốc xoáy dâu bùng nổ">
+                    <a href="/baiTapLonThietKeWeb/chiTietSanPham1.html">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/locXoayDauBungNo.jpg"
+                                alt="Lốc xoáy dâu bùng nổ">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Lốc xoáy dâu bùng nổ
+                                </h4>
+                                <p class="product-value">
+                                    50.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 product main hidden" data-name="Bánh ngọt Macaron ngọt ngào">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/MacaronNgotNgao.jpg"
+                                alt="Macaron ngọt ngào">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Macaron ngọt ngào
+                                </h4>
+                                <p class="product-value">
+                                    20.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 product main hidden" data-name="Bánh kem Caramel Rose">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh kem/BanhkemCaramelRose.jpg"
+                                alt="Bánh kem Caramel Rose">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Bánh kem Caramel Rose
+                                </h4>
+                                <p class="product-value">
+                                    400.000đ
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 product main hidden" data-name="Bánh kem Almond Vanilla">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh kem/BanhkemAlmondVanilla.jpg"
+                                alt="Bánh kem Almond Vanilla">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Bánh kem Almond Vanilla
+                                </h4>
+                                <p class="product-value">
+                                    600.000đ
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 product main hidden" data-name="Bánh kem Strawberry Delight">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh kem/BanhkemStrawberryDelight.jpg"
+                                alt="Bánh kem Strawberry Delight">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Bánh kem Strawberry Delight
+                                </h4>
+                                <p class="product-value">
+                                    220.000đ
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 product main hidden" data-name="Bánh mặn Pateso Ngàn Lớp">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh mặn/PatesoNganLop.jpg"
+                                alt="Bánh mặn Pateso Ngàn Lớp">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Pateso Ngàn Lớp
+                                </h4>
+                                <p class="product-value">
+                                    45.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 product main hidden" data-name="Bánh mặn Chà bông tơi xốp">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh mặn/ChaBongToiXop.jpg"
+                                alt="Bánh Chà bông tơi xốp">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Chà bông tơi xốp
+                                </h4>
+                                <p class="product-value">
+                                    18.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 product main hidden" data-name="Bánh mặn xúc xích ngủ đông">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh mặn/XucXichNguDong.jpg"
+                                alt="Bánh xúc xích ngủ đông">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Xúc xích ngủ đông
+                                </h4>
+                                <p class="product-value">
+                                    15.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 product main hidden" data-name="Bánh trung thu nướng gà quay Jambo">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh nướng trung thu/GaQuayJambo.jpg"
+                                alt="Gà quay Jambo">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Gà quay Jambo
+                                </h4>
+                                <p class="product-value">
+                                    100.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 product main hidden" data-name="Bánh trung thu dẻo thập cẩm">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh nướng trung thu/ThapCamMely.jpg"
+                                alt="Thập cẩm mê ly">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Thập cẩm mê ly
+                                </h4>
+                                <p class="product-value">
+                                    80.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 product main hidden" data-name="Bánh nướng trung thu Matcha Nhật Bản">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh nướng trung thu/banhNuongMatchaNhatBan.jpg"
+                                alt="Bánh nướng Matcha Nhật Bản">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Bánh nướng Matcha Nhật Bản
+                                </h4>
+                                <p class="product-value">
+                                    70.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 product main hidden" data-name="Bánh ngọt Dứa béo ngậy">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/sanPhamNoiBat/banhDuaBeoNgay.png"
+                                alt="Bánh Dứa béo ngậy">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Bánh Dứa béo ngậy
+                                </h4>
+                                <p class="product-value">
+                                    125.000đ
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 product main hidden" data-name="Bánh ngọt niềm hạnh phúc dâu ngọt">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/sanPhamNoiBat/niemHanhPhucDauNgot.jpg"
+                                alt="Niềm hạnh phúc dâu ngọt">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Niềm hạnh phúc dâu ngọt
+                                </h4>
+                                <p class="product-value">
+                                    40.000đ
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 product main hidden" data-name="Bánh ngọt giòn tan Caramel dâu">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh ngọt/sanPhamNoiBat/gionTanCaramelDau.png"
+                                alt="Giòn tan Caramel Dâu">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Giòn tan Caramel Dâu
+                                </h4>
+                                <p class="product-value">
+                                    150.000đ
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 product main hidden" data-name="Bánh kem Pricess">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh kem/banhKemCongChua.jpg"
+                                alt="Bánh kem Pricess">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Bánh kem Pricess
+                                </h4>
+                                <p class="product-value">
+                                    180.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 product main hidden" data-name="Bánh kem cúc họa mi">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh kem/sanPhamNoiBat/banhKemCucHoaMi.jpg"
+                                alt="Bánh Kem Cúc Họa Mi">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Bánh Kem Cúc Họa Mi
+                                </h4>
+                                <p class="product-value">
+                                    320.000đ
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 product main hidden" data-name="Bánh kem dâu tây bóng đêm">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh kem/sanPhamNoiBat/dauTayBongDem.jpg"
+                                alt="Dâu tây bóng đêm">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Dâu tây bóng đêm
+                                </h4>
+                                <p class="product-value">
+                                    280.000đ
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 product main hidden" data-name="Bánh nướng trung thu đậu xanh">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh nướng trung thu/sanPhamNoiBat/banhNuongDauXanh.jpg"
+                                alt="Bánh nướng đậu xanh">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Bánh nướng đậu xanh
+                                </h4>
+                                <p class="product-value">
+                                    80.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 product main hidden" data-name="Bánh nướng trung thu đậu xanh trứng nướng">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh nướng trung thu/sanPhamNoiBat/dauXanhTrungNuong.jpg"
+                                alt="Đậu xanh trứng nướng">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Đậu xanh trứng nướng
+                                </h4>
+                                <p class="product-value">
+                                    95.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 product main hidden" data-name="Bánh nướng trung thu thập cẩm">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh nướng trung thu/sanPhamNoiBat/banhNuongThapCam.jpg"
+                                alt="Bánh nướng thập cẩm">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Bánh nướng thập cẩm
+                                </h4>
+                                <p class="product-value">
+                                    90.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 product main hidden" data-name="Bánh mặn vòng tròn xúc xích">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh mặn/VongTronXucXich.jpg"
+                                alt="Bánh vòng xúc xích">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Bánh vòng xúc xích
+                                </h4>
+                                <p class="product-value">
+                                    23.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 product main hidden" data-name="Bánh mặn cá mê ly">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh mặn/banhCaMeLy.jpg" alt="Bánh cá mê ly">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Bánh cá mê ly
+                                </h4>
+                                <p class="product-value">
+                                    27.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 product main hidden" data-name="Bánh mặn Pía đặc sản">
+                    <a href="#">
+                        <div class="product-items">
+                            <img src="/baiTapLonThietKeWeb/assets/image/bánh mặn/BanhPiaTrungDao.jpg"
+                                alt="Bánh Pía đặc sản">
+                            <div class="product-infomation">
+                                <h4 class="product-name">
+                                    Bánh Pía đặc sản
+                                </h4>
+                                <p class="product-value">
+                                    13.000đ/1c
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- danhSachSanPhamDeTraCuu -->
+
+
+    <div class="main" style="margin-bottom: -200px;">
+        <h2 style="color: var(--color-text); font-weight: bold; text-align: center; font-size: 32px;">Về chúng tôi</h2>
+        <!-- nearNearFooter -->
+        <div class="nearNearFooter">
+            <div class="forUs">
+                <img src="/baiTapLonThietKeWeb/assets/image/nearNearFooter.jpg" alt="">
+            </div>
+            <div class="BackGround">
+
+            </div>
+            <div class="Text">
+                <h2>Tiệm bánh nhỏ</h2>
+                <p>Chúng tôi tạo ra những chiếc bánh ngọt mang hương vị độc đáo, kết hợp hài hòa giữa truyền thống và
+                    hiện đại. Từ bánh mì mềm mịn đến bánh ngọt nhiều màu, mỗi sản phẩm đều mang đến một bất ngờ thú vị
+                    cho khẩu vị của bạn. Không chỉ ngon miệng, thương hiệu còn được yêu thích bởi sự đa dạng và sáng
+                    tạo.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Near_Footer -->
+    <div class="near_footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-12">
+                    <img src="/baiTapLonThietKeWeb/assets/image/bg_footer.png" alt="Gần footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- End_Near-footer -->
+
+    <!-- Footer -->
+    <footer class="Footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="inner-left">
+                        <img src="/baiTapLonThietKeWeb/assets/image/logo.jpg" alt="">
+                        <h3 class="inner-infom">CÔNG TY CỔ PHẦN BÁNH NGỌT TIỆM BÁNH NHỎ</h3>
+                        <p class="inner-check">
+                            Mã số doanh nghiệp: 0103588868 Do Sở Kế hoạch - Đầu tư Hà Nội cấp ngày 25/08/2009
+                        </p>
+                        <!-- <img class="img-check" src="/baiTapLonThietKeWeb/assets/image/đã check.jpg" alt="CHECK"> -->
+                        <img class="img-check"
+                            src="https://theme.hstatic.net/1000313040/1000406925/14/hg_img_thumb1.png?v=2177"
+                            alt="CHECK">
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="inner-center">
+                        <h3 class="inner-cs">Chính sách</h3>
+                        <ul class="list-cs">
+                            <li><a href="#">Chính sách giao dịch, thanh toán</a></li>
+                            <li><a href="#">Chính sách đổi trả</a></li>
+                            <li><a href="#">Chính sách vận chuyển</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="inner-right">
+                        <h3 class="inner-inf">Liên hệ</h3>
+                        <div class="inner-foot">
+                            <div class="inner-contact">
+                                <i class="fa-solid fa-phone"></i>
+                                <p>0905 306 831</p>
+                            </div>
+                            <div class="inner-location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>19 Trần Phú, Hà Đông, Hà Nội</p>
+                            </div>
+                            <div class="inner-mas">
+                                <i class="fa-regular fa-envelope"></i>
+                                <p>cskh@tiembanhnho.vn</p>
+                            </div>
+                            <div class="HR">
+                                <hr>
+                            </div>
+                            <div class="inner-icons">
+                                <!-- <img src="/baiTapLonThietKeWeb/assets/image/tiktok.png" alt="Tiktok">
+                                <img src="/baiTapLonThietKeWeb/assets/image/facebook.png" alt="Facebook">
+                                <img src="/baiTapLonThietKeWeb/assets/image/youtube.png" alt="Youtube"> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End- Footer -->
+    <!-- cuoiTrangWeb -->
+
+
+    <script>
+        // JavaScript để tìm kiếm sản phẩm
+        var name = document.getElementById("resultReturn");
+        const products = document.querySelectorAll(".product");
+        const searchInput = document.getElementById("searchInput");
+        const searchButton = document.getElementById("searchButton");
+        const productList = document.querySelectorAll(".productList");
+        const mains = document.querySelectorAll(".main");
+        // document.querySelector("ccc").classList.remove("hidden");
+        // Hàm xử lý tìm kiếm
+        searchButton.addEventListener("click", function () {
+            // document.querySelectorAll(".hidden").classList.remove("hidden");
+            // document.getElementsById("resultReturn").classList.remove("hidden");
+            const searchValue = searchInput.value.toLowerCase(); // Lấy giá trị nhập vào
+            let hasResult = false;
+            mains.forEach(main => {
+                main.classList.add("hidden");
+            })
+            products.forEach(product => {
+                const productName = product.getAttribute("data-name").toLowerCase();
+                if (productName.includes(searchValue)) {
+                    product.classList.remove("hidden"); // Hiển thị sản phẩm phù hợp
+                    hasResult = true;
+                }
+                // } else {
+                //     product.classList.add("hidden"); // Ẩn sản phẩm không phù hợp
+                // }
+            });
+
+            if (!hasResult) {
+                alert("Không tìm thấy sản phẩm phù hợp!");
+                mains.forEach(main => {
+                    // document.querySelectorAll(".product").classList.add("hidden");
+                    document.getElementsById("resultReturn").classList.add("hidden");
+                    main.classList.remove("hidden");
+                    // document.getElementsByClassName("ccc").classList.add("hidden");
+                })
+            } else {
+                document.getElementById("resultReturn").innerHTML = "Sản phẩm tìm kiếm cho kết quá" + " " + searchValue;
+            }
+        });
+
+        // Cho phép nhấn Enter để tìm kiếm
+        searchInput.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                searchButton.click();
+            }
+        });
+    </script>
+
+    <script>
+        //banhSanPham slider
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " w3-white";
+        }
+    </script>
+
+
+    <script>
+        //Khuyen mai Slider
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlidese");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 2000); // Change image every 2 seconds
+        }
+    </script>
+    <script src="/baiTapLonThietKeWeb/bootstrap/wow.min.js"></script>
+    <script>
+        const buttonMenu = document.querySelector("#buttonMenu");
+        const buttonClose = document.querySelector("#buttonClose");
+        const menu = document.querySelector("#Menu");
+        const button = document.querySelector("#buttonMenu");
+        buttonMenu.onclick = function () {
+            button.classList.add("hide");
+            menu.classList.add("show");
+        }
+        buttonClose.onclick = function () {
+            menu.classList.remove("show");
+            button.classList.remove("hide");
+        }
+        new WOW().init();
+    </script>
+
+    <script src="/baiTapLonThietKeWeb/bootstrap/jquery.slim.min.js"></script>
+    <script src="/baiTapLonThietKeWeb/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
