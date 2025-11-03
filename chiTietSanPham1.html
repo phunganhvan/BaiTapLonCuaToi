@@ -147,6 +147,24 @@
         .info-content.hidden {
             display: none;
         }
+        .search-input {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-button {
+            position: absolute;
+            top: 8px;
+            left: 290px;
+            padding: 0;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
     </style>
     <!-- Header -->
     <header id="top" class="Header">
@@ -161,10 +179,12 @@
                         <div class="header-search">
                             <div class="inner-header">
                                 <div class="BackGR">
-                                    <input type="text" class="input-search">
+                                    <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..."
+                                        class="input-search">
                                 </div>
                                 <div class="header-bg"></div>
-                                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                                <button id="searchButton" class="search-button"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
                             </div>
                         </div>
                         <div class="header-icons">
