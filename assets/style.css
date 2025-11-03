@@ -176,7 +176,7 @@ Header .bg-icons a i {
     padding-top: 40px;
     width: 100%;
     height: 500px;
-    background-image: url(/baiTapLonThietKeWeb/assets/image/background-header.jpg);
+    background-image: url(./image/background-header.jpg);
     background-size: cover;
     opacity: 0.9;
 }
